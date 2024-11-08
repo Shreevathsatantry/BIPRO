@@ -2,7 +2,6 @@ import pandas as pd
 import sweetviz as sv
 import streamlit as st
 
-
 def show_page():
     def read_data(file):
         # Check file type and read accordingly
@@ -23,6 +22,8 @@ def show_page():
 
         report = sv.analyze(df)
         report.show_html("report.html")
-        st.components.v1.html(open("report.html").read(), height=600, width=800)
+        
+        # Increase the width to 1200 (or any value you prefer)
+        st.components.v1.html(open("report.html").read(), height=650, width=1350)
     else:
         st.info("Please upload a CSV or Excel file to view the DataFrame.")
