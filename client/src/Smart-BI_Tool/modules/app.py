@@ -261,10 +261,10 @@ def show_page():
 
         return agraph(nodes=nodes, edges=edges, config=config)
 
-    ollama_url = "https://0b77-34-125-200-223.ngrok-free.app"
+    ollama_url = "https://3564-34-91-97-238.ngrok-free.app"
     llm = Ollama(model="llama3.1:8b-instruct-q8_0", base_url=ollama_url)
 
-    st.title("RAG Graph with Neo4j, Llama3 (Ollama), and CSV Upload")
+    st.title("Knowledge Graph")
 
     uploaded_file = st.file_uploader("Choose a file", type=['csv'])
 

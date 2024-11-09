@@ -77,10 +77,15 @@ def show_page():
                     st.subheader("Converted Data")
                     st.dataframe(converted_data.head())
                     original_data = converted_data
+                st.download_button(
+                label="Download Processed CSV",
+                data=original_data.to_csv(index=False),
+                file_name="processed_file.csv",
+                mime="text/csv"
+            )
 
             # Manual AutoClean options
-            dup_option = st.sidebar.selectbox('Handle duplicates:', list(duplicates.keys()))
-            selected_duplicates = duplicates[dup_option]
+            
 
             missing_num_option = st.sidebar.selectbox('Handle missing numerical values:', list(missing_num.keys()))
             selected_missing_num = missing_num[missing_num_option]
@@ -137,5 +142,5 @@ def show_page():
                     st.download_button('Download Cleaned Data', cleaned_data.to_csv(index=False), file_name='cleaned_data.csv')
 
 # Run the Streamlit app
-if __name__ == "__main__":
+if __name__ == "_main_":
     show_page()

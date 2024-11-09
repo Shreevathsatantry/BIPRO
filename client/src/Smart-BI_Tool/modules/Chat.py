@@ -13,7 +13,7 @@ def show_page():
             return pd.read_excel(file)
 
 
-    st.title("🤖 DataFrame ChatBot - Ollama")
+    st.title("🤖 Advanced BI Assistant")
 
     # initialize chat history in streamlit session state
     if "chat_history" not in st.session_state:
@@ -43,7 +43,7 @@ def show_page():
         st.chat_message("user").markdown(user_prompt)
         st.session_state.chat_history.append({"role":"user","content": user_prompt})
 
-        llm = ChatOllama(model="llama3.1:8b-instruct-q8_0", temperature=0,base_url="https://0b77-34-125-200-223.ngrok-free.app")
+        llm = ChatOllama(model="llama3.1:8b-instruct-q8_0", temperature=0,base_url="https://3564-34-91-97-238.ngrok-free.app")
 
         pandas_df_agent = create_pandas_dataframe_agent(
             llm,
